@@ -1,3 +1,9 @@
-# Calamares Installer for XeroLinux (Phase 2)
+<p align="center">
+    <img width="420" src="https://i.imgur.com/QWqMIsr.png" alt="logo">
+</p>
 
-Repo for **XeroLinux Calamares Installer** Rolling version. Specifically built for **XeroLinux (Phase 2)**
+<h2 align="center">!!! XeroLinux Calamares !!!!</h2>
+
+<p align="center">
+    <img src="https://i.imgur.com/ytQGQLy.png" alt="logo">
+</p>
