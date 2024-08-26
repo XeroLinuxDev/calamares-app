@@ -4,7 +4,7 @@
 pkgname=calamares-app
 _pkgname=calamares
 pkgver=3.3.9
-pkgrel=01
+pkgrel=3
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -12,42 +12,44 @@ url="https://github.com/calamares/calamares"
 license=('LGPL')
 provides=('calamares')
 depends=(
-	'boost-libs'
-	'ckbcomp'
-	'cryptsetup'
-	'doxygen'
-	'efibootmgr'
-	'gptfdisk'
-	'gtk-update-icon-cache'
-	'hwinfo'
-	'icu'
-	'kconfig'
-	'kcoreaddons'
-	'kcrash'
-	'ki18n'
-	'kparts'
-	'kpmcore'
-	'kservice'
-	'kwidgetsaddons'
-	'libpwquality'
-	'mkinitcpio-openswap'
-	'polkit-qt6'
-	'rsync'
-	'qt6-declarative'
-	'solid'
-	'squashfs-tools'
-	'yaml-cpp'
+  boost-libs
+  ckbcomp
+  cryptsetup
+  dmidecode
+  gptfdisk
+  hwinfo
+  kconfig
+  kcoreaddons
+  kcrash
+  ki18n
+  kparts
+  kpmcore
+  kservice
+  kwidgetsaddons
+  libpwquality
+  mkinitcpio-openswap
+  networkmanager
+  polkit-qt6
+  python
+  qt6-declarative
+  qt6-svg
+  rsync
+  solid
+  squashfs-tools
+  upower
+  yaml-cpp
 )
 makedepends=(
-	'boost'
-	'cmake'
-	'extra-cmake-modules'
-	'git'
-	'ninja'
-	'python-jsonschema'
-	'python-pyaml'
-	'python-unidecode'
-	'qt6-tools'
+  boost
+  cmake
+  doxygen
+  extra-cmake-modules
+  git
+  ninja
+  python-jsonschema
+  python-pyaml
+  python-unidecode
+  qt6-tools
 )
 backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/displaymanager.conf'
