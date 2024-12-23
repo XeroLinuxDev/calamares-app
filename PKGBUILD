@@ -56,7 +56,7 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/initcpio.conf'
         'usr/share/calamares/modules/unpackfs.conf')
 
-source=($pkgname::git+$url#commit=e6fa229
+source=($pkgname::git+$url#commit=191f711
 	"xero-cal.desktop"
 	"xero-cal-debug.desktop"
 	"calamares_polkit")
