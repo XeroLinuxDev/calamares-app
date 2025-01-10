@@ -3,8 +3,8 @@
 
 pkgname=calamares-app
 _pkgname=calamares
-pkgver=3.3.12
-pkgrel=3
+pkgver=3.3.13
+pkgrel=2
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -56,7 +56,7 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/initcpio.conf'
         'usr/share/calamares/modules/unpackfs.conf')
 
-source=($pkgname::git+$url#commit=191f711
+source=($pkgname::git+$url#commit=babaddf
 	"xero-cal.desktop"
 	"xero-cal-debug.desktop"
 	"calamares_polkit")
