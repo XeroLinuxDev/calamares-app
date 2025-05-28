@@ -4,7 +4,7 @@
 pkgname=calamares-app
 _pkgname=calamares
 pkgver=3.3.14
-pkgrel=6
+pkgrel=7
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -56,11 +56,13 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/initcpio.conf'
         'usr/share/calamares/modules/unpackfs.conf')
 
-source=($pkgname::git+$url#commit=6ff2ca450b
+source=($pkgname::git+$url#commit=274996f7c8
 	"xero-cal.desktop"
-	"calamares_polkit")
+	"calamares_polkit"
+	"cosmic-cal.desktop")
 
 sha256sums=('SKIP'
+            'SKIP'
             'SKIP'
             'SKIP')
 
@@ -114,8 +116,8 @@ build() {
 package() {
 	cd $pkgname/build
 	DESTDIR="${pkgdir}" cmake --build . --target install
+	install -Dm644 "$srcdir/xero-cal.desktop" "$pkgdir/etc/xdg/autostart/cosmic-cal.desktop"
 	install -Dm644 "$srcdir/xero-cal.desktop" "$pkgdir/etc/xdg/autostart/xero-cal.desktop"
-	install -Dm644 "$srcdir/xero-cal.desktop" "$pkgdir/usr/share/applications/xero-cal.desktop"
 	install -Dm755 "$srcdir/calamares_polkit" "$pkgdir/usr/bin/calamares_polkit"
 	rm "$pkgdir/usr/share/applications/calamares.desktop"
 }
