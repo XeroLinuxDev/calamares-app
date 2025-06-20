@@ -4,7 +4,7 @@
 pkgname=calamares-app
 _pkgname=calamares
 pkgver=3.3.14
-pkgrel=11
+pkgrel=12
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -115,6 +115,7 @@ package() {
 	cd $pkgname/build
 	DESTDIR="${pkgdir}" cmake --build . --target install
 	install -Dm644 "$srcdir/xero-cal.desktop" "$pkgdir/etc/xdg/autostart/xero-cal.desktop"
+	install -Dm644 "$srcdir/xero-cal.desktop" "$pkgdir/usr/share/applications/xero-cal.desktop"
 	install -Dm755 "$srcdir/calamares_polkit" "$pkgdir/usr/bin/calamares_polkit"
 	rm "$pkgdir/usr/share/applications/calamares.desktop"
 }
