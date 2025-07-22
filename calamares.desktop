@@ -1,0 +1,25 @@
+[Desktop Entry]
+Categories=GTK;Settings;Security;X-GNOME-Settings-Panel;X-GNOME-SystemSettings;X-Unity-Settings-Panel;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;Utility;System;Filesystem;GNOME;Qt;KDE;
+Comment[en_US]=Installer for XeroLinux
+Comment=Installer for XeroLinux
+Comment[en_GB]=Calamares — System Installer
+Exec=sudo calamares
+GenericName[en_US]=System Installer
+GenericName=System Installer
+GenericName[en_GB]=System Installer
+Icon=calamares
+Icon[en_GB]=calamares
+Keywords=calamares;system;installer;
+MimeType=
+Name[en_US]=Install XeroLinux
+Name=Install XeroLinux
+Name[en_GB]=Install System
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=3.4.0
+X-AppStream-Ignore=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=
