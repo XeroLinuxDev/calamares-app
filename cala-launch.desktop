@@ -1,20 +1,8 @@
 [Desktop Entry]
-Categories=GTK;Settings;Security;X-GNOME-Settings-Panel;X-GNOME-SystemSettings;X-Unity-Settings-Panel;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;Utility;System;Filesystem;GNOME;Qt;KDE;
-Comment[en_US]=Installer for XeroLinux
-Comment=Installer for XeroLinux
-Exec=cala-launch
-Icon=calamares
-Keywords=calamares;system;installer;
-MimeType=
-Name[en_US]=Install XeroLinux
-Name=Install XeroLinux
-Name[en_GB]=Install System
-Path=
-StartupNotify=true
-Terminal=true
-TerminalOptions=
 Type=Application
-Version=3.4.0
-X-AppStream-Ignore=true
-X-KDE-SubstituteUID=false
-X-KDE-Username=
+Name=Install XeroLinux
+Comment=XeroLinux Installer
+Exec=xdg-terminal-exec -- cala-launch
+Icon=calamares
+Terminal=false
+Categories=Utility;
