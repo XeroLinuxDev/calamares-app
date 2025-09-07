@@ -4,7 +4,7 @@
 pkgname=calamares-app
 _pkgname=calamares
 pkgver=3.4.0
-pkgrel=4
+pkgrel=10
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -56,7 +56,7 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/initcpio.conf'
         'usr/share/calamares/modules/unpackfs.conf')
 
-source=($pkgname::git+$url#commit=0949c7eb32
+source=($pkgname::git+$url#commit=814deec714
 	"calamares.desktop"
 	"cala-launch.desktop"
 	"calamares_polkit")
@@ -70,6 +70,7 @@ prepare() {
 
 	cp -rv ../modules/* ${srcdir}/$pkgname/src/modules/
 
+	sed -i 's/command\.append("-S")/command.append("-Syy")/' "$srcdir/$pkgname/src/modules/packages/main.py"
 	sed -i -e 's/"Install configuration files" OFF/"Install configuration files" ON/' "$srcdir/$pkgname/CMakeLists.txt"
 	sed -i -e "s/desired_size = 512 \* 1024 \* 1024  \# 512MiB/desired_size = 512 \* 1024 \* 1024 \* 4  \# 2048MiB/" "$srcdir/$pkgname/src/modules/fstab/main.py"
 
@@ -117,7 +118,7 @@ package() {
 	cd $pkgname/build
 	DESTDIR="${pkgdir}" cmake --build . --target install
 	install -Dm644 "$srcdir/calamares.desktop" "$pkgdir/etc/xdg/autostart/calamares.desktop"
-	install -Dm644 "$srcdir/cala-launch.desktop" "$pkgdir/home/liveuser/Desktop/cala-launch.desktop"
+	install -Dm755 "$srcdir/calamares.desktop" "$pkgdir/home/liveuser/Desktop/calamares.desktop"
 	install -Dm755 "$srcdir/calamares_polkit" "$pkgdir/usr/bin/calamares_polkit"
 	rm "$pkgdir/usr/share/applications/calamares.desktop"
 }

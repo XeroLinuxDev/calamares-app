@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Install XeroLinux
-Comment=XeroLinux Installer
-Exec=xdg-terminal-exec -- cala-launch
-Icon=calamares
-Terminal=false
-Categories=Utility;
