@@ -4,7 +4,7 @@
 pkgname=calamares-app
 _pkgname=calamares
 pkgver=3.4.0
-pkgrel=10
+pkgrel=12
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -56,13 +56,11 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/initcpio.conf'
         'usr/share/calamares/modules/unpackfs.conf')
 
-source=($pkgname::git+$url#commit=814deec714
+source=($pkgname::git+$url#commit=fd3d730526
 	"calamares.desktop"
-	"cala-launch.desktop"
 	"calamares_polkit")
 
 sha256sums=('SKIP'
-            'SKIP'
             'SKIP'
             'SKIP')
 
