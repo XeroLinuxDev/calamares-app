@@ -4,7 +4,7 @@
 pkgname=calamares-app
 _pkgname=calamares
 pkgver=3.4.0
-pkgrel=12
+pkgrel=14
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 license=(GPL)
@@ -56,7 +56,7 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/initcpio.conf'
         'usr/share/calamares/modules/unpackfs.conf')
 
-source=($pkgname::git+$url#commit=fd3d730526
+source=($pkgname::git+$url#commit=c9e4998865
 	"calamares.desktop"
 	"calamares_polkit")
 
@@ -70,6 +70,8 @@ prepare() {
 
 	sed -i 's/command\.append("-S")/command.append("-Syy")/' "$srcdir/$pkgname/src/modules/packages/main.py"
 	sed -i -e 's/"Install configuration files" OFF/"Install configuration files" ON/' "$srcdir/$pkgname/CMakeLists.txt"
+# 	sed -i '/case FileSystem::Xfs:/ a case FileSystem::Bcachefs:' "$srcdir/$pkgname/src/libcalamares/partition/FileSystem.cpp"
+#   sed -i '/case FileSystem::Fat16:/ i case FileSystem::Bcachefs:' "$srcdir/$pkgname/src/modules/partition/core/PartitionLayout.cpp"
 	sed -i -e "s/desired_size = 512 \* 1024 \* 1024  \# 512MiB/desired_size = 512 \* 1024 \* 1024 \* 4  \# 2048MiB/" "$srcdir/$pkgname/src/modules/fstab/main.py"
 
 	cd $pkgname
